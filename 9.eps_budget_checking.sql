@@ -1,6 +1,5 @@
-USE [SIAM_EPSINFDB]
+USE [SIAM_EPSDB]
 GO
-/****** Object:  StoredProcedure [dbo].[interface_sap_po]    Script Date: 23/02/2022 3:34:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -136,5 +135,5 @@ ELSE
 END
 
 -- @doc_type AS INT --1:Expense,2:Investment
--- EXEC eps_interface_sap_pr_outstanding '20190101', '20220101','',100, 1
--- EXEC eps_interface_sap_pr_outstanding '20190101', '20220101','',100, 2
+-- EXEC [report_budget_checking] '20190101', '20220101','',100, 1
+-- EXEC [report_budget_checking] '20190101', '20220101','',100, 2

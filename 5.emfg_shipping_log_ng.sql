@@ -1,6 +1,6 @@
 USE [SIAM_SHIPPINGDB];
 GO
-/****** Object:  StoredProcedure [dbo].[interface_sap_inv]    Script Date: 23/02/2022 3:39:54 PM ******/
+
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -21,9 +21,9 @@ AS
 SELECT TOP (@record_count )
 	[DATE], [TIME], USER_NG, NG_DESCRIPTION, PDS_NUM, NG_ID, UNLOCK_NG 
 FROM 
-	TM_LOG_OK 
+	TM_LOG_NG
 WHERE 
-	PDS_NUM = @doc_num AND 
+	PDS_NUM LIKE '%' + @doc_num + '%' AND 
 	[DATE] >= @start_date AND 
 	[DATE] <= @end_date
 

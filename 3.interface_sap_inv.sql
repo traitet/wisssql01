@@ -37,4 +37,4 @@ BEGIN
 END
 
 
--- EXEC interface_sap_inv '20190101', '20220101','',100
+-- EXEC [interface_sap_inv] '20190101', '20220101','',100,''

@@ -11,7 +11,7 @@ GO
 -- Created date : 23-02-2022
 -- Updated date : 23-02-2022
 -- =========================================================
-CREATE PROCEDURE [dbo].[emfg_shipping_log_ok]
+ALTER PROCEDURE [dbo].[emfg_shipping_log_ok]
 @start_date AS VARCHAR(8),
 @end_date AS VARCHAR(8),
 @doc_num AS VARCHAR(8),
