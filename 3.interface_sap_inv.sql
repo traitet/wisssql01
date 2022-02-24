@@ -15,8 +15,8 @@ ALTER PROCEDURE [dbo].[interface_sap_inv]
 @start_date AS VARCHAR(8),
 @end_date AS VARCHAR(8),
 @doc_num AS VARCHAR(8),
-@record_count AS INT
-@inv_num AS VARCHAR(8),
+@record_count AS INT,
+@inv_num AS VARCHAR(8)
 AS
 BEGIN
     -- DECLARE @start_dateAS VARCHAR(8) = '20190524'
@@ -28,9 +28,9 @@ BEGIN
     IFSTATUS, IFMESSEGE, SAPINVDOC, SAPINVDOCYEAR, SAPINVITEMID, OPTFIELD1, OPTFIELD2, OPTFIELD3, OPTFIELD4, OPTFIELD5, OPTFIELD6, OPTFIELD7 
     FROM TTIFINV
     WHERE 
-    IFSTATUS = 'E' and 
-    POSTINGDATE >= @start_date and 
-    POSTINGDATE <= @end_date and 
+    IFSTATUS = 'E' AND 
+    POSTINGDATE >= @start_date AND 
+    POSTINGDATE <= @end_date AND 
     PONUM LIKE '%' + @doc_num + '%' AND
 	INVNUM LIKE '%' + @inv_num + '%' 
     ORDER BY RIDTTINV, PONUM
