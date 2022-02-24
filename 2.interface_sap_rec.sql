@@ -15,7 +15,8 @@ ALTER PROCEDURE [dbo].[interface_sap_rec]
 @start_date AS VARCHAR(8),
 @end_date AS VARCHAR(8),
 @doc_num AS VARCHAR(8),
-@record_count AS INT
+@record_count AS INT,
+@inv_num AS VARCHAR(8)
 AS
 BEGIN
     -- DECLARE @start_dateAS VARCHAR(8) = '20190524'
@@ -32,7 +33,8 @@ BEGIN
         IFSTATUS = 'E' and 
         POSTINGDATE >= @start_date and 
         POSTINGDATE <= @end_date and 
-        PONUM LIKE '%' + @doc_num + '%' 
+        PONUM LIKE '%' + @doc_num + '%' and 
+        INVNUM LIKE  '%' + @inv_num + '%'  
         ORDER BY RIDTTIFRC, PONUM
 END
 
