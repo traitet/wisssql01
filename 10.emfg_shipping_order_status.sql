@@ -35,7 +35,6 @@ AS
     ) x
     WHERE x.PDSNUM LIKE '%' + @doc_num +'%' and 
         ISSUEDATE >= @start_date AND
-        ISSUEDATE <= @end_date AND 
-        PKLNUM = @doc_num
+        ISSUEDATE <= @end_date
 
 -- EXEC [emfg_shipping_order_status] '20170914', '20220101','',100 
